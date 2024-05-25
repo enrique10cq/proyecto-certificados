@@ -44,9 +44,9 @@
                      <?php
                      require('../config/conexion.php');
 
-                     $sql = "SELECT c.id_certificado, CONCAT(a.nombres, ' ', a.apellidos)
+                     $sql = "SELECT a.id_alumno, CONCAT(a.nombres, ' ', a.apellidos)
                            AS alumno, a.documento, a.correo, c.curso, c.codigo, c.fecha
-                           FROM certificado c JOIN alumno a ON c.id_alumno = a.id_alumno";
+                           FROM certificado c JOIN alumno a ON c.id_certificado = a.id_certificado";
                      $resultado = $conn->query($sql);
 
                      while ($row = $resultado->fetch_assoc()) { ?>
@@ -58,7 +58,7 @@
                            <td><?= $row['codigo'] ?></td>
                            <td><?= $row['fecha'] ?></td>
                            <td>
-                              <button class="btn btn-warning" title="Editar Registro" data-bs-id="<?= $row['id_certificado'] ?>" data-bs-toggle="modal" data-bs-target="#editarModal">
+                              <button class="btn btn-warning" title="Editar Registro" data-bs-id="" data-bs-toggle="modal" data-bs-target="#editarModal">
                                  <i class="fa-solid fa-pen-to-square"></i>
                               </button>
                               <button class="btn btn-danger" title="Eliminar Registro" data-bs-toggle="modal" data-bs-target="">
