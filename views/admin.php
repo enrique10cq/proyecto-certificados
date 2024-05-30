@@ -22,7 +22,7 @@
       <div class="row justify-content-md-center">
          <div class="col-md-12">
             <span class="">
-               <button class="btn btn-success" title="Registrar Certificados" data-bs-toggle="modal" data-bs-target="#nuevoModal">
+               <button class="btn btn-primary" title="Registrar Certificados" data-bs-toggle="modal" data-bs-target="#nuevoModal">
                   <i class="fa-solid fa-circle-plus"></i> Nuevo Registro
                </button>
             </span>
@@ -31,6 +31,7 @@
                <table class="table table-hover table-striped" id="table_certificados">
                   <thead class="">
                      <tr class="">
+                        <th scope="col">ID</th>
                         <th scope="col">Alumno</th>
                         <th scope="col">Documento</th>
                         <th scope="col">Correo</th>
@@ -51,6 +52,7 @@
 
                      while ($row = $resultado->fetch_assoc()) { ?>
                         <tr>
+                           <td><?= $row['id_alumno'] ?></td>
                            <td><?= $row['alumno'] ?></td>
                            <td><?= $row['documento'] ?></td>
                            <td><?= $row['correo'] ?></td>
@@ -58,6 +60,9 @@
                            <td><?= $row['codigo'] ?></td>
                            <td><?= $row['fecha'] ?></td>
                            <td>
+                              <button class="btn btn-success" title="Visualizar" data-bs-id="" data-bs-toggle="modal" data-bs-target="">
+                                 <i class="fa-solid fa-eye"></i>
+                              </button>
                               <button class="btn btn-warning" title="Editar Registro" data-bs-id="" data-bs-toggle="modal" data-bs-target="#editarModal">
                                  <i class="fa-solid fa-pen-to-square"></i>
                               </button>
