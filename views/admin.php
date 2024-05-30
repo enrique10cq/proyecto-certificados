@@ -16,7 +16,7 @@
    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
 </head>
 
-<body data-bs-theme="dark">
+<body data-bs-theme="dark" class="body">
    <h1 class="text-center fw-bold">CERTIFICADOS</h1>
    <div class="container container-table">
       <div class="row justify-content-md-center">
