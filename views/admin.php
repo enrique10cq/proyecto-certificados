@@ -7,7 +7,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Registro de Certificados</title>
    <link rel="stylesheet" href="../assets/css/all.min.css">
    <link rel="stylesheet" href="../assets/css/style.css">
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -16,7 +16,7 @@
    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.7/css/dataTables.bootstrap5.css">
 </head>
 
-<body data-bs-theme="dark" class="body">
+<body class="body">
    <h1 class="text-center fw-bold">CERTIFICADOS</h1>
    <div class="container container-table">
       <div class="row justify-content-md-center">
@@ -29,7 +29,7 @@
             <hr>
             <div class="table-responsive mt-2">
                <table class="table table-hover table-striped" id="table_certificados">
-                  <thead class="">
+                  <thead class="table-dark">
                      <tr class="">
                         <th scope="col">ID</th>
                         <th scope="col">Alumno</th>
@@ -60,10 +60,10 @@
                            <td><?= $row['codigo'] ?></td>
                            <td><?= $row['fecha'] ?></td>
                            <td>
-                              <button class="btn btn-success" title="Visualizar" data-bs-id="" data-bs-toggle="modal" data-bs-target="">
+                              <button class="btn btn-success" title="Visualizar Certificado" data-bs-id="" data-bs-toggle="" data-bs-target="">
                                  <i class="fa-solid fa-eye"></i>
                               </button>
-                              <button class="btn btn-warning" title="Editar Registro" data-bs-id="" data-bs-toggle="modal" data-bs-target="#editarModal">
+                              <button class="btn btn-warning" title="Editar Registro" data-bs-id="<?= $row['id_alumno']; ?>" data-bs-toggle="modal" data-bs-target="#editarModal">
                                  <i class="fa-solid fa-pen-to-square"></i>
                               </button>
                               <button class="btn btn-danger" title="Eliminar Registro" data-bs-toggle="modal" data-bs-target="">
@@ -86,6 +86,7 @@
    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.js"></script>
    <script src="https://cdn.datatables.net/2.0.7/js/dataTables.bootstrap5.js"></script>
    <script src="../assets/js/scriptTable.js"></script>
+   <script src="../assets/js/editModal.js"></script>
 </body>
 
 </html>

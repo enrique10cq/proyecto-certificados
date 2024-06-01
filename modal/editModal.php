@@ -11,7 +11,7 @@
          <div class="modal-body">
             <form action="../controller/actualizar.php" method="post" enctype="multipart/form-data">
                <h6>Datos del Alumno</h6>
-               <input type="hidden" id=id name="id">
+               <input type="hidden" id="id" name="id">
                <div class="row">
                   <div class="col-6 mb-3">
                      <label for="nombres" class="form-label">Nombres</label>

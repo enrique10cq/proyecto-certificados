@@ -1,5 +1,5 @@
 let editarModal = document.getElementById('editarModal');
-editarModal.addEventListener('shown.bs.modal', event => {
+editarModal.addEventListener('show.bs.modal', event => {
     let button = event.relatedTarget;
     let id = button.getAttribute('data-bs-id');
 
@@ -13,7 +13,7 @@ editarModal.addEventListener('shown.bs.modal', event => {
     let inputCodigo = editarModal.querySelector('.modal-body #codigo');
     let inputCurso = editarModal.querySelector('.modal-body #curso');
     let inputDescripcion = editarModal.querySelector('.modal-body #descripcion');
-    
+
     let url = "../../controller/getCertificado.php";
     let formData = new FormData();
     formData.append('id', id);
@@ -21,9 +21,12 @@ editarModal.addEventListener('shown.bs.modal', event => {
     fetch(url, {
         method: "POST",
         body: formData
-    })
-    .then(response => response.json())
+    }).then(response => response.json())
     .then(data => {
+        if (data.error) {
+            console.error(data.error);
+            return;
+        }
         inputId.value = data.id_alumno;
         inputNombres.value = data.nombres;
         inputApellidos.value = data.apellidos;
@@ -34,5 +37,5 @@ editarModal.addEventListener('shown.bs.modal', event => {
         inputCurso.value = data.curso;
         inputDescripcion.value = data.descripcion;
     })
-    .catch(e => console.log(e));
+    .catch(e => console.error(e));
 });

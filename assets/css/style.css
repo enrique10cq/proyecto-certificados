@@ -2,13 +2,13 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    background: #fcfcfc;
+    background-color:#ACACAC;
 }
 
 .container-table {
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #fff;
+    padding: 1.25rem;
+    border-radius: .5rem;
+    background-color: #fff;
 }
 
 thead tr th {
@@ -23,8 +23,8 @@ tr td {
     color: red;
 } */
 .card-form{
-    border: 1px solid blue;
-    border-radius: 5px;
+    border: 1px solid #000075;
+    border-radius: .25rem;
     background-color: #ffffff;
 }
 /* #212529
